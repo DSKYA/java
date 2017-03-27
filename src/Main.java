@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.Stack;
 
 public class Main {
@@ -70,8 +72,25 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int a[][] = {{1,2,3},{2,4,6},{3,8,9}};
-        System.out.println(Find(9,a));
+        Solution26 lucky = new Solution26();
+        Scanner s = new Scanner(System.in);
+        Treenode2 root = null;
+        while(s.hasNextLine()){
+            String z = s.nextLine();
+            root = lucky.buildtree(root,z);
+        }
+        Treenode2 p = null;
+        Treenode2 head = null;//head 为 二叉树的头
+        for (Treenode2 x:lucky.list) {
+            if(p == x){
+                head = x;
+                p = x;
+            }
+            else{
+                p.right = x;
+                p = x;
+            }
+        }
         System.out.println("Hello World!");
     }
 }
