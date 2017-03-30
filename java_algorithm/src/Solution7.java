@@ -29,7 +29,58 @@ public class Solution7 {
         }
         return '#';
     }
+
+    public static ListNode deleteDuplication(ListNode pHead)
+    {
+        ListNode p1 = pHead;
+        ListNode p2 = pHead;
+        if(p2.next == null)return pHead;
+        if(pHead.val != pHead.next.val){
+            p2 = p2.next;
+            while(p2 != null && p1.next != null){
+                p2 = p2.next;
+                if(p2 == null)return pHead;
+                ListNode pp = p1;
+                p1 = p1.next;
+                if(p1.val == p2.val){
+                    while(p2 !=null && p2.val == p1.val){
+                        p2=p2.next;
+                    }
+                    pp.next = p2;
+                }
+                else{
+                    pp = pp.next;
+                }
+                p1 = pp;
+            }
+            return pHead;
+        }
+        else{
+            ListNode tmphead = new ListNode(pHead.val - 1);
+            tmphead.next = pHead;
+            p1 = tmphead;
+            while(p2 != null && p1.next != null){
+                p2 = p2.next;
+                if(p2 == null)return tmphead.next;
+                ListNode pp = p1;
+                p1 = p1.next;
+                if(p1.val == p2.val){
+                    while(p2 !=null && p2.val == p1.val){
+                        p2=p2.next;
+                    }
+                    pp.next = p2;
+                }
+                else{
+                    pp = pp.next;
+                }
+                p1 = pp;
+            }
+            return tmphead.next;
+        }
+    }
+
     public static void main(String []args) {
+        /*
         Insert('h');
         System.out.println(FirstAppearingOnce());
         Insert('e');
@@ -50,5 +101,14 @@ public class Solution7 {
         System.out.println(FirstAppearingOnce());
         Insert('d');
         System.out.println(FirstAppearingOnce());
+        */
+        ListNode root = new ListNode(1);
+        root.next = new ListNode(2);
+        root.next.next = new ListNode(3);
+        root.next.next.next = new ListNode(3);
+        root.next.next.next.next = new ListNode(4);
+        root.next.next.next.next.next = new ListNode(4);
+        root.next.next.next.next.next.next = new ListNode(5);
+        System.out.println((deleteDuplication(root)));
     }
 }
