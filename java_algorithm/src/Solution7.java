@@ -1,6 +1,8 @@
 /**
  * Created by cxj on 17-3-29.
  */
+import java.util.ArrayList;
+import java.util.LinkedList;
 public class Solution7 {
     static StringBuffer s = new StringBuffer();
     static byte[] istest = new byte[32];
@@ -79,6 +81,40 @@ public class Solution7 {
         }
     }
 
+    static boolean isleft = true;
+    public static ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
+        LinkedList a1 = new LinkedList();
+        LinkedList a2 = new LinkedList();
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        if(pRoot == null)return result;
+        a1.addLast(pRoot);
+        while(!a1.isEmpty()|| !a2.isEmpty()){
+            if(isleft == true){
+                ArrayList<Integer> tmp = new ArrayList<Integer>();
+                while(!a1.isEmpty()){
+                    TreeNode p = (TreeNode) a1.removeLast();
+                    tmp.add(p.val);
+                    if(p.left != null)a2.addLast(p.left);
+                    if(p.right != null)a2.addLast(p.right);
+                }
+                result.add(tmp);
+                isleft = false;
+            }
+            else{
+                ArrayList<Integer> tmp = new ArrayList<Integer>();
+                while(!a2.isEmpty()){
+                    TreeNode p = (TreeNode) a2.removeLast();
+                    tmp.add(p.val);
+                    if(p.right != null)a1.addLast(p.right);
+                    if(p.left != null)a1.addLast(p.left);
+                }
+                result.add(tmp);
+                isleft = true;
+            }
+        }
+        return result;
+    }
+
     public static void main(String []args) {
         /*
         Insert('h');
@@ -109,6 +145,13 @@ public class Solution7 {
         root.next.next.next.next = new ListNode(4);
         root.next.next.next.next.next = new ListNode(4);
         root.next.next.next.next.next.next = new ListNode(5);
-        System.out.println((deleteDuplication(root)));
+       // System.out.println((deleteDuplication(root)));
+        TreeNode root2 =new TreeNode(5);
+        root2.left = new TreeNode(4);
+        //root2.right = new TreeNode(10);
+        root2.left.left = new TreeNode(3);
+        root2.left.left.left = new TreeNode(2);
+        System.out.println((Print(root2)));
+
     }
 }
