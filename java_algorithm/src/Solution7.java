@@ -149,6 +149,79 @@ public class Solution7 {
         return result;
     }
 
+    static String Serialize(TreeNode root) {
+        LinkedList<TreeNode> tmp = new LinkedList<TreeNode>();
+        StringBuffer result = new StringBuffer();
+        int sum = 0;
+        if(root == null)return result.toString();
+        tmp.addLast(root);
+        sum = 1;
+        while(!tmp.isEmpty() && sum > 0){
+            TreeNode p = tmp.removeFirst();
+            sum--;
+            if(p == null){
+                sum++;
+                result.append('#');
+            }
+            else {
+                result.append(p.val);
+                if(p.left != null){
+                    sum++;
+                    tmp.addLast(p.left);
+                }
+                else tmp.addLast(null);
+                if(p.right != null){
+                    sum++;
+                    tmp.addLast(p.right);
+                }
+                else tmp.addLast(null);
+
+            }
+            if(sum > 0)result.append(',');
+        }
+        return result.toString();
+    }
+
+    static int index = -1;
+
+    static TreeNode Deserialize2(String[] strs) {
+        index++;
+        if(index < strs.length && !strs[index].equals("#")) {
+            TreeNode root = new TreeNode(0);
+            root.val = Integer.parseInt(strs[index]);
+            root.left = Deserialize2(strs);
+            root.right = Deserialize2(strs);
+            return root;
+        }
+        return null;
+    }
+
+    static TreeNode Deserialize(String str) {
+        int i = 0;
+        if(str.length() == 0)
+            return null;
+        String[] strs = str.split(",");
+        LinkedList<TreeNode> tmp = new LinkedList<TreeNode>();
+        TreeNode root = new TreeNode(Integer.parseInt(strs[i]));
+        i++;
+        tmp.addLast(root);
+        while(!tmp.isEmpty() && i < strs.length){
+            TreeNode p = tmp.removeFirst();
+            if(i < strs.length && !strs[i].equals("#")){
+                p.left = new TreeNode(Integer.parseInt(strs[i]));
+                tmp.addLast(p.left);
+            }
+            i++;
+            if(i < strs.length && !strs[i].equals("#")){
+                p.right = new TreeNode(Integer.parseInt(strs[i]));
+                tmp.addLast(p.right);
+            }
+            i++;
+        }
+        return root;
+    }
+
+
     public static void main(String []args) {
         /*
         Insert('h');
@@ -185,7 +258,7 @@ public class Solution7 {
         //root2.right = new TreeNode(10);
         root2.left.left = new TreeNode(3);
         root2.left.left.left = new TreeNode(2);
-        System.out.println((Print(root2)));
-
+        //System.out.println((Print(root2)));
+        System.out.println(Serialize((Deserialize("5,4,#,3,#,2"))));
     }
 }
