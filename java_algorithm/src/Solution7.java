@@ -115,6 +115,40 @@ public class Solution7 {
         return result;
     }
 
+    ArrayList<ArrayList<Integer> > Print2(TreeNode pRoot) {
+        boolean isleft = true;
+        LinkedList a1 = new LinkedList();
+        LinkedList a2 = new LinkedList();
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        if(pRoot == null)return result;
+        a1.addLast(pRoot);
+        while(!a1.isEmpty()|| !a2.isEmpty()){
+            if(isleft == true){
+                ArrayList<Integer> tmp = new ArrayList<Integer>();
+                while(!a1.isEmpty()){
+                    TreeNode p = (TreeNode) a1.removeFirst();
+                    tmp.add(p.val);
+                    if(p.left != null)a2.addLast(p.left);
+                    if(p.right != null)a2.addLast(p.right);
+                }
+                result.add(tmp);
+                isleft = false;
+            }
+            else{
+                ArrayList<Integer> tmp = new ArrayList<Integer>();
+                while(!a2.isEmpty()){
+                    TreeNode p = (TreeNode) a2.removeFirst();
+                    tmp.add(p.val);
+                    if(p.left != null)a1.addLast(p.left);
+                    if(p.right != null)a1.addLast(p.right);
+                }
+                result.add(tmp);
+                isleft = true;
+            }
+        }
+        return result;
+    }
+
     public static void main(String []args) {
         /*
         Insert('h');

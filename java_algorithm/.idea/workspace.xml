@@ -43,14 +43,17 @@
       <file leaf-file-name="Solution7.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Solution7.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="121" column="11" lean-forward="true" selection-start-line="121" selection-start-column="11" selection-end-line="121" selection-end-column="11" />
+            <state relative-caret-position="305">
+              <caret line="140" column="35" lean-forward="true" selection-start-line="140" selection-start-column="35" selection-end-line="140" selection-end-column="35" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="e#2676#2696#0" expanded="true" />
                 <element signature="e#2899#2908#0" expanded="true" />
                 <element signature="e#3334#3343#0" expanded="true" />
+                <element signature="e#3971#3991#0" expanded="true" />
+                <element signature="e#4194#4203#0" expanded="true" />
+                <element signature="e#4630#4639#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -637,12 +640,12 @@
       <updated>1490769046727</updated>
       <workItem from="1490769051506" duration="26996000" />
       <workItem from="1490858089270" duration="5267000" />
-      <workItem from="1490965296087" duration="1838000" />
+      <workItem from="1490965296087" duration="2149000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34101000" />
+    <option name="totallyTimeSpent" value="34412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1680" height="1023" extended-state="6" />
@@ -750,6 +753,9 @@
             <element signature="e#2676#2696#0" expanded="true" />
             <element signature="e#2899#2908#0" expanded="true" />
             <element signature="e#3334#3343#0" expanded="true" />
+            <element signature="e#3971#3991#0" expanded="true" />
+            <element signature="e#4194#4203#0" expanded="true" />
+            <element signature="e#4630#4639#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -782,6 +788,9 @@
             <element signature="e#2676#2696#0" expanded="true" />
             <element signature="e#2899#2908#0" expanded="true" />
             <element signature="e#3334#3343#0" expanded="true" />
+            <element signature="e#3971#3991#0" expanded="true" />
+            <element signature="e#4194#4203#0" expanded="true" />
+            <element signature="e#4630#4639#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -888,14 +897,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Solution7.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="121" column="11" lean-forward="true" selection-start-line="121" selection-start-column="11" selection-end-line="121" selection-end-column="11" />
+        <state relative-caret-position="305">
+          <caret line="140" column="35" lean-forward="true" selection-start-line="140" selection-start-column="35" selection-end-line="140" selection-end-column="35" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#2676#2696#0" expanded="true" />
             <element signature="e#2899#2908#0" expanded="true" />
             <element signature="e#3334#3343#0" expanded="true" />
+            <element signature="e#3971#3991#0" expanded="true" />
+            <element signature="e#4194#4203#0" expanded="true" />
+            <element signature="e#4630#4639#0" expanded="true" />
           </folding>
         </state>
       </provider>
