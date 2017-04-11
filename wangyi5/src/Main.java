@@ -2,7 +2,19 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static int func (){
+        try{
+            return 1;
+        }catch (Exception e){
+            return 2;
+        }finally{
+            return 3;
+        }
+    }
+
+
     public static void main(String[] args) {
+        /*
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int m = in.nextInt();
@@ -25,7 +37,9 @@ public class Main {
                 }
             }
         }
-       if(!flg)System.out.print("No");
+        */
+      // if(!flg)System.out.print("No");
+        System.out.print(func());
         //System.out.println();
        // System.out.print(sum);
     }
