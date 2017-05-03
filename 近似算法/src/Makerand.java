@@ -60,7 +60,7 @@ public class Makerand {
             for (; i < n; i++) {
                 hs.clear();
                 p = 0;
-                int tmp_max = random.nextInt(n / 5) + 1;
+                int tmp_max = random.nextInt(n / 2) + 1;
                 for (; p < tmp_max; ) {
                     int t = random.nextInt(n) + 1;
                     if (!hs.contains(t)) {
