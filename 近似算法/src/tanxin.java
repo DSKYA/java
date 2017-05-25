@@ -26,7 +26,7 @@ public class tanxin {
             // 一次读入一行，直到读入null为文件结束
             while ((tempString = reader.readLine()) != null) {
                 // 显示行号
-                System.out.println("line " + line + ": " + tempString);
+                //System.out.println("line " + line + ": " + tempString);
                 String[] tmp = tempString.split(" ");
                 ls[line] = new Node(tmp);
                 line++;
@@ -89,7 +89,7 @@ public class tanxin {
                 bufferWritter.write(String.valueOf("\n"));
             }
             bufferWritter.close();
-            System.out.println("Done");
+          //  System.out.println("Done");
         }
         catch (IOException e) {
             e.printStackTrace();

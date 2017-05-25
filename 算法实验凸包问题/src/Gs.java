@@ -55,17 +55,6 @@ public class Gs {
                 * (p1.y - p2.y)));
     }
 
-    public void answer(){
-        double sum = 0;
-        for (int i = 0; i < len - 1; i++) {
-            sum += distance(ch[i], ch[i + 1]);
-        }
-        if (len > 1) {
-            sum += distance(ch[len - 1], ch[0]);
-        }
-        sum += 2 * l * Math.PI;
-        System.out.println(Math.round(sum));
-    }
 
     public int Graham_scan() {
         int k = 0, top = 2;
